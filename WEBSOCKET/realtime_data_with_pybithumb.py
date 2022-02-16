@@ -11,6 +11,7 @@ class Worker(QThread):
 
     recv = pyqtSignal(str)
     def run(self):
+        # WebSocketManger를 통해서 데이터를 받는 부분 구현
         wm = WebSocketManager("ticker", ["BTC_KRW"])
         while True:
             data = wm.get()
